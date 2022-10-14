@@ -6,10 +6,10 @@ services:
       - ./data/db:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=password123
+      - MYSQL_DATABASE=dbfileo
+      - MYSQL_USER=ufielo
+      - MYSQL_PASSWORD=password123
     expose:
       - 3306
       - 33060
@@ -21,7 +21,7 @@ services:
       - ${WORDPRESS_PORT}:80
     restart: always
     environment:
-      - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST}
-      - WORDPRESS_DB_USER=${MYSQL_USER}
-      - WORDPRESS_DB_PASSWORD=${MYSQL_PASSWORD}
-      - WORDPRESS_DB_NAME=${MYSQL_DATABASE}
+      - WORDPRESS_DB_HOST=db:3306
+      - WORDPRESS_DB_USER=ufielo
+      - WORDPRESS_DB_PASSWORD=password123
+      - WORDPRESS_DB_NAME=dbfileo
