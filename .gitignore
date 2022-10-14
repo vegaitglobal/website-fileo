@@ -1,0 +1,7 @@
+.idea
+
+# This file contains secrets, use .env.default to create this one for your use
+.env
+
+# This folder contains data of Docker volumes, see docker-compose.yml for more info
+data
