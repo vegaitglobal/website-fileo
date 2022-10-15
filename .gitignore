@@ -5,3 +5,5 @@
 
 # This folder contains data of Docker volumes, see docker-compose.yml for more info
 data
+
+localdev.sh
