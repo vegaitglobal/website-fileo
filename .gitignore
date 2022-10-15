@@ -1,9 +1,31 @@
 .idea
+.DS_Store
 
 # This file contains secrets, use .env.default to create this one for your use
 .env
 
 # This folder contains data of Docker volumes, see docker-compose.yml for more info
-data
+# Exclude all of its content except 'wp' subfolder
+data/*
+!data/wp/
 
-localdev.sh
+# Exclude everything in 'wp' subfolder except 'wp-content'
+data/wp/*
+!data/wp/wp-content/
+
+# Exclude everything in 'wp-content' except plugins and themes
+data/wp/wp-content/*
+!data/wp/wp-content/plugins/
+!data/wp/wp-content/themes/
+
+# Exclude all plugins except the ones you white-list
+data/wp/wp-content/plugins/*
+# Include only project-specific plugins (developed/modified for the needs of this project)
+# example:
+# !data/wp/wp-content/plugins/my-single-file-plugin.php
+
+# Exclude all themes except the ones you white-list
+data/wp/wp-content/themes/*
+# Include only project-specific themes (developed/modified for the needs of this project)
+# example:
+# !data/wp/wp-content/themes/my-theme/
